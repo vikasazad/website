@@ -39,9 +39,14 @@ export function Faq() {
                 Common Questions
               </span>
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-serif text-[#333333]">
-              Frequently Asked <span className="text-[#C1A265]">Questions</span>
-            </h2>
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-serif text-[#333333]">
+                Frequently Asked{" "}
+                <span className="text-[#C1A265]">Questions</span>
+              </h2>
+              <div className="w-24 h-1 bg-[#C1A265]/30 rounded-full mt-4 mb-6"></div>
+            </div>
+
             <p className="max-w-[700px] text-[#333333] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed font-sans">
               Get answers to the most common questions about our hospitality
               solutions.

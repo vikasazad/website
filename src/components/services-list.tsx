@@ -58,10 +58,14 @@ export function ServicesList() {
                 AI-Powered Solutions
               </span>
             </div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-serif text-[#333333]">
-              Smart Solutions for{" "}
-              <span className="text-[#C1A265]">Hospitality Operations</span>
-            </h2>
+            <div className="flex flex-col items-center text-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-serif text-[#333333]">
+                Smart Solutions for{" "}
+                <span className="text-[#C1A265]">Hospitality Operations</span>
+              </h2>
+              <div className="w-24 h-1 bg-[#C1A265]/30 rounded-full mt-4 mb-6"></div>
+            </div>
+
             <p className=" text-[#333333] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed font-sans">
               Transform the way you operate and deliver unforgettable guest
               experiences with our suite of advanced hospitality solutions. From
