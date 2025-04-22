@@ -1,6 +1,7 @@
 import type React from "react";
 import "@/app/globals.css";
 import { Inter, Cinzel, Open_Sans } from "next/font/google";
+import { AnimationWrapper } from "@/components/AnimationWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 const cinzel = Cinzel({
@@ -19,6 +20,10 @@ export const metadata = {
     "Buildbility - Streamline Your Hospitality Operations, Maximize Profits",
   description:
     "Streamline hospitality operations with cutting-edge AI for improved hotel and restaurant management and expense reduction.",
+  icons: {
+    icon: "/images/logo2.svg",
+    apple: "/images/logo2.svg",
+  },
 };
 
 export default function RootLayout({
@@ -27,11 +32,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ scrollBehavior: "smooth" }}>
       <body
         className={`${inter.className} ${cinzel.variable} ${openSans.variable}`}
       >
-        {children}
+        <AnimationWrapper>{children}</AnimationWrapper>
       </body>
     </html>
   );

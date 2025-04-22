@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { MoveUpRight } from "lucide-react";
+import { ScrollButton } from "./ScrollButton";
 
 export function Header() {
   return (
@@ -16,14 +16,14 @@ export function Header() {
           />
         </div>
         <div>
-          <Button
+          <ScrollButton
             className="rounded-xl px-6 py-3 transition-all duration-200 ease-in-out 
           bg-[#2C3E50] text-white font-sans flex items-center gap-2 
           box-shadow: 5px 5px 10px rgba(44, 62, 80, 0.3), -5px -5px 10px rgba(255, 255, 255, 0.1) cursor-pointer"
           >
             Start for free
             <MoveUpRight className="h-4 w-4 " />
-          </Button>
+          </ScrollButton>
         </div>
       </div>
     </header>
