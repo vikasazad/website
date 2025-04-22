@@ -10,7 +10,7 @@ export function Faq() {
     {
       question: "How quickly can we implement your system?",
       answer:
-        "Most properties complete initial implementation within 2-4 weeks, achieving positive ROI within 90 days.",
+        "Most properties complete initial implementation within 1-2 weeks, achieving positive ROI within 30 days.",
     },
     {
       question: "Will this require extensive staff training?",

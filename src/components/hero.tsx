@@ -16,7 +16,7 @@ export function Hero() {
               className="object-cover rounded-2xl w-full h-[calc(90vh-4rem)] md:h-[calc(90vh-6rem)]"
               priority
             />
-            <div className="absolute inset-0 rounded-2xl">
+            <div className="absolute inset-0  rounded-2xl">
               <div className=" absolute top-[50%]  -translate-y-1/2 left-3 md:left-12 max-w-lg z-10 space-y-4 md:space-y-6 p-4 md:p-0">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter text-[#C1A265] font-serif leading-tight">
                   Streamline Your Operations, Maximize Profits

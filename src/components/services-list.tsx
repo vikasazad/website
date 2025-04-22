@@ -6,45 +6,109 @@ import {
   Bot,
   Settings,
   Palette,
+  Bell,
+  Coffee,
+  CheckCircle2,
 } from "lucide-react";
 
 export function ServicesList() {
   const services = [
     {
-      title: "Hotel & Restaurant Management",
+      title: "Hotel Management",
       description:
-        "Effortlessly oversee rooms, staffing, inventory, and even social media through a single, intuitive dashboard.",
+        "Centralized control for bookings, housekeeping, maintenance, and guest services—optimized with automation.",
       icon: <Building className="h-8 w-8 text-[#C1A265]" />,
+
+      features: [
+        "Automated check-in/check-out",
+        "Housekeeping task scheduling",
+        "Real-time occupancy & revenue tracking",
+        "Maintenance alerts and tasking",
+      ],
+    },
+    {
+      title: "Restaurant Management",
+      description:
+        "Digitally streamline your front and back of house—from reservations to kitchen inventory and staff performance.",
+      icon: <Utensils className="h-8 w-8 text-[#C1A265]" />,
+      features: [
+        "Smart table & reservation management",
+        "Live kitchen order tracking",
+        "Menu engineering with cost insights",
+        "Shift planning & staff productivity tools",
+      ],
     },
     {
       title: "Food Order App",
       description:
-        "Simplify the dining experience with QR code-based ordering for dine-in, takeaway, and room service. Minimize errors and reduce waiting times while improving overall efficiency.",
-      icon: <Utensils className="h-8 w-8 text-[#C1A265]" />,
+        "Contactless QR-based ordering for dine-in, takeaway, and room service with payment integration and real-time updates.",
+      icon: <Smartphone className="h-8 w-8 text-[#C1A265]" />,
+      features: [
+        "Multi-mode ordering (dine-in, takeaway, room)",
+        "Live kitchen status display",
+        "Integrated digital payments",
+        "Customizable digital menus",
+      ],
     },
     {
       title: "Concierge App",
       description:
-        "Empower your guests to book services, order food, or report concerns from the convenience of their mobile devices, offering a frictionless experience that enhances satisfaction.",
-      icon: <Smartphone className="h-8 w-8 text-[#C1A265]" />,
+        "Empower guests to book services, order amenities, or request assistance through a digital concierge platform.",
+      icon: <Bell className="h-8 w-8 text-[#C1A265]" />,
+      features: [
+        "In-app amenity and service booking",
+        "Local recommendations & itineraries",
+        "Live chat and chatbot support",
+        "Room upgrade and late checkout requests",
+      ],
     },
     {
-      title: "AI Assistants",
+      title: "Guest Experience",
       description:
-        "Harness the power of intelligent agents to handle routine operations, analyze key data, and enable smarter decision-making, giving your team more time to focus on what matters most.",
+        "Create tailored guest journeys with smart profiles, loyalty insights, and personalized in-stay recommendations.",
+      icon: <Coffee className="h-8 w-8 text-[#C1A265]" />,
+      features: [
+        "Personalized guest profiling",
+        "Loyalty program integration",
+        "Automated upselling prompts",
+        "Real-time feedback and response",
+      ],
+    },
+    {
+      title: "AI Assistants & Dashboards",
+      description:
+        "Intelligent insights, real-time alerts, and decision-making tools for data-driven hotel and restaurant leadership.",
       icon: <Bot className="h-8 w-8 text-[#C1A265]" />,
+      features: [
+        "Real-time performance dashboards",
+        "AI-powered business insights",
+        "Dynamic pricing recommendations",
+        "Occupancy and trend forecasting",
+      ],
     },
     {
-      title: "Automation Services",
+      title: "Automation Hub",
       description:
-        "Save valuable time and resources by automating repetitive tasks, from inventory tracking to employee scheduling, ensuring operations run smoothly and efficiently.",
+        "Automate routine tasks like inventory checks, shift schedules, and maintenance workflows with zero manual effort.",
       icon: <Settings className="h-8 w-8 text-[#C1A265]" />,
+      features: [
+        "Automated inventory reordering",
+        "Predictive maintenance scheduling",
+        "Shift & rota generation",
+        "Compliance and checklist automation",
+      ],
     },
     {
-      title: "Design Services",
+      title: "Design Studio",
       description:
-        "Elevate your brand identity with professionally crafted digital materials like infographics, menus, and other marketing assets tailored to your business's unique needs.",
+        "Premium digital designs for your hospitality brand—menus, posters, signage, and more—done fast, done right.",
       icon: <Palette className="h-8 w-8 text-[#C1A265]" />,
+      features: [
+        "Custom menu design",
+        "Branded marketing collateral",
+        "Digital signage and screens",
+        "Event promotions and flyers",
+      ],
     },
   ];
 
@@ -75,7 +139,7 @@ export function ServicesList() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <div key={index} className="neumorphic-card flex flex-col h-full">
               <div className="neumorphic-icon-container mb-6">
@@ -87,7 +151,17 @@ export function ServicesList() {
               <p className="text-[#333333]/80 font-sans mb-6 flex-grow">
                 {service.description}
               </p>
-              <Button className="neumorphic-button bg-[#FAF9F5] text-[#C1A265] cursor-pointer">
+              <ul className="space-y-3 mb-6 flex-grow">
+                {service.features.map((feature, fIndex) => (
+                  <li key={fIndex} className="flex items-start">
+                    <CheckCircle2 className="h-5 w-5 text-[#C1A265] mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-charcoal/90 font-sans text-sm">
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <Button className="neumorphic-button bg-[#2C3E50] text-white cursor-pointer">
                 Learn More
               </Button>
             </div>

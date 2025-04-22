@@ -21,7 +21,7 @@ export function Header() {
           bg-[#2C3E50] text-white font-sans flex items-center gap-2 
           box-shadow: 5px 5px 10px rgba(44, 62, 80, 0.3), -5px -5px 10px rgba(255, 255, 255, 0.1) cursor-pointer"
           >
-            Request a Demo
+            Start for free
             <MoveUpRight className="h-4 w-4 " />
           </Button>
         </div>
