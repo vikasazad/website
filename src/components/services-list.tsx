@@ -12,8 +12,9 @@ import {
   Bell,
   Coffee,
   CheckCircle2,
+  Cpu,
 } from "lucide-react";
-
+// linear-gradient(265deg, #fbe6c7, #ebd3e4)
 export function ServicesList() {
   const services = [
     {
@@ -116,22 +117,25 @@ export function ServicesList() {
   ];
 
   return (
-    <section className="w-full py-12 md:py-12 lg:py-12 bg-[#FAF9F5]">
-      <div className="container px-4 md:px-6">
+    <section className="w-full py-12 md:py-15 lg:py-15">
+      <div className="container mx-auto max-w-[1400px] px-4 md:px-6">
         <ScrollReveal>
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <div className="inline-block mb-4 bg-[#FAF9F5] rounded-full px-4 py-1 neumorphic-badge">
-                <span className="text-[#C1A265] font-sans text-sm">
-                  AI-Powered Solutions
-                </span>
+              <div className="inline-block mb-4 rounded-full px-4 py-1 neumorphic-badge border-1  border-[#fbe6c7]">
+                <div className="flex items-center gap-2">
+                  <Cpu className="h-4 w-4 text-[#C1A265]" />
+                  <span className="text-[#C1A265] font-sans text-sm">
+                    AI-Powered Solutions
+                  </span>
+                </div>
               </div>
-              <div className="flex flex-col items-center text-center">
+              <div className="flex flex-col items-center text-center mt-5">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-serif text-[#333333]">
                   Smart Solutions for{" "}
                   <span className="text-[#C1A265]">Hospitality Operations</span>
                 </h2>
-                <div className="w-24 h-1 bg-[#C1A265]/30 rounded-full mt-4 mb-6"></div>
+                <div className="w-24 h-1 bg-gradient-to-r from-[#fbe6c7] to-[#ebd3e4] rounded-full mt-4 mb-6"></div>
               </div>
 
               <p className="text-[#333333] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed font-sans">
@@ -147,8 +151,9 @@ export function ServicesList() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <ScrollReveal key={index}>
-              <div className="neumorphic-card flex flex-col h-full">
-                <div className="neumorphic-icon-container mb-6">
+              <div className="neumorphic-card flex flex-col h-full relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-gradient pointer-events-none z-[1]" />
+                <div className="neumorphic-icon-container mb-6 relative z-[2]">
                   {service.icon}
                 </div>
                 <h3 className="font-bold text-xl text-[#333333] font-serif mb-3">

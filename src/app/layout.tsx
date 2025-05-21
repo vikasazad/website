@@ -1,7 +1,7 @@
 import type React from "react";
 import "@/app/globals.css";
 import { Inter, Cinzel, Open_Sans } from "next/font/google";
-import { AnimationWrapper } from "@/components/AnimationWrapper";
+// import { AnimationWrapper } from "@/components/AnimationWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 const cinzel = Cinzel({
@@ -36,7 +36,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${cinzel.variable} ${openSans.variable}`}
       >
-        <AnimationWrapper>{children}</AnimationWrapper>
+        {children}
       </body>
     </html>
   );

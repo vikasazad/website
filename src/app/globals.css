@@ -169,7 +169,7 @@
 }
 
 .neumorphic-button {
-  border-radius: 1rem;
+  border-radius: 0.7rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
@@ -317,4 +317,39 @@
   to {
     height: 0;
   }
+}
+
+html,
+body {
+  background-color: #faf9f5 !important;
+  position: relative;
+}
+
+/* body::before,
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: black;
+  z-index: 1000;
+}
+
+body::before {
+  left: 8%;
+}
+
+body::after {
+  right: 8%;
+} */
+
+.bg-gradient {
+  background: radial-gradient(
+    circle at top right,
+    #db93e5,
+    #f8d2d7ba,
+    transparent 70%
+  );
+  filter: blur(10px);
 }
