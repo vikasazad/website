@@ -106,13 +106,13 @@ export function Integrations() {
               </div>
 
               {/* Left side icons */}
-              <div className="absolute left-1/4 lg:left-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 lg:gap-12 w-[120px]">
+              <div className="absolute left-0 md:left-1/4 lg:left-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 lg:gap-12 w-[120px] items-center md:items-start">
                 {leftIcons.map((icon, index) => (
                   <ScrollReveal key={index}>
                     <div
                       className={`w-full flex ${
                         index % 2 === 0
-                          ? "justify-start"
+                          ? "justify-center md:justify-start"
                           : "md:justify-start lg:justify-end"
                       }`}
                     >
@@ -125,14 +125,14 @@ export function Integrations() {
               </div>
 
               {/* Right side icons */}
-              <div className="absolute right-0 md:right-1/4 lg:right-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 lg:gap-12 w-[120px]">
+              <div className="absolute right-0 md:right-1/4 lg:right-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 lg:gap-12 w-[120px] items-center md:items-start">
                 {rightIcons.map((icon, index) => (
                   <ScrollReveal key={index}>
                     <div
                       className={`w-full flex ${
                         index % 2 === 0
-                          ? "md:justify-start lg:justify-end"
-                          : "justify-start"
+                          ? "justify-center md:justify-start lg:justify-end"
+                          : "justify-center md:justify-start"
                       }`}
                     >
                       <div className="w-18 h-18 bg-white rounded-lg flex items-center justify-center transform transition-transform duration-300 hover:scale-110">
