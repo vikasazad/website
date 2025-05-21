@@ -82,11 +82,11 @@ export function Integrations() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center text-center mt-2">
+          <div className="flex flex-col items-center text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-serif text-[#333333]">
               Integra <span className="text-[#C1A265]">tions</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#fbe6c7] to-[#ebd3e4] rounded-full mt-4 mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#fbe6c7] to-[#ebd3e4] rounded-full mt-4 mb-4"></div>
             <p className="max-w-[700px] text-[#333333]/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed font-sans">
               Seamlessly integrate with your favorite&apos;s
             </p>
@@ -106,7 +106,7 @@ export function Integrations() {
               </div>
 
               {/* Left side icons */}
-              <div className="absolute left-0 md:left-1/4 lg:left-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 lg:gap-12 w-[120px]">
+              <div className="absolute left-1/4 lg:left-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 lg:gap-12 w-[120px]">
                 {leftIcons.map((icon, index) => (
                   <ScrollReveal key={index}>
                     <div
