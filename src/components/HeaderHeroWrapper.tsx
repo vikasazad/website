@@ -7,7 +7,7 @@ import { ShootingStarField } from "./ShootingStar";
 export function HeaderHeroWrapper() {
   return (
     <div
-      className="w-full mt-4 mb-0 px-10 lg:px-27 lg:pb-0 lg:pt-4   pt-4  relative"
+      className="w-full mt-4 mb-0 px-8 lg:px-27 lg:pb-0 lg:pt-4   pt-4  relative"
       style={{
         borderRadius: "15px",
         background: "url('/images/background.avif') center/cover no-repeat",
