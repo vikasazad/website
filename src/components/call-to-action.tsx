@@ -1,7 +1,56 @@
+"use client";
 import { Button } from "@/components/ui/button";
-import { Calendar, Pointer } from "lucide-react";
+import { Pointer, Send } from "lucide-react";
+import { useState } from "react";
 
 export function CallToAction() {
+  const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
+  const [errors, setErrors] = useState({ email: "", website: "" });
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateWebsite = (website: string) => {
+    try {
+      new URL(website);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const newErrors = { email: "", website: "" };
+    let isValid = true;
+
+    if (!email) {
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (!validateEmail(email)) {
+      newErrors.email = "Please enter a valid email address";
+      isValid = false;
+    }
+
+    if (!website) {
+      newErrors.website = "Website is required";
+      isValid = false;
+    } else if (!validateWebsite(website)) {
+      newErrors.website = "Please enter a valid website URL";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+
+    if (isValid) {
+      console.log("Email:", email);
+      console.log("Website:", website);
+    }
+  };
+
   return (
     <section
       id="call-to-action"
@@ -30,19 +79,25 @@ export function CallToAction() {
           <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-[#333333] font-sans text-lg">
-                Ready to see real results? Schedule a demo today to explore how
-                our innovative tools can streamline your operations, cut costs,
-                improve guest satisfaction, retention, and revenue.
+                Imagine running your hotel or restaurant at peak efficiency—no
+                more wasted inventory, no more understaffed shifts, no more
+                missed upsell opportunities. Without Buildbility, you&apos;re
+                leaving profits on the table and drowning in repetitive tasks.
               </p>
               <p className="text-[#333333] font-sans text-lg">
-                In just one session, you&apos;ll discover how our AI-driven
-                technology simplifies daily tasks, enhances efficiency, and
-                empowers your team to focus on what matters most—delivering
-                unforgettable guest experiences.
+                At Buildbility, we&apos;ll craft a step-by-step AI roadmap
+                tailored to your unique challenges. No cookie-cutter solutions—
+                only a clear plan showing exactly how to streamline operations,
+                cut costs, and elevate guest experiences.
               </p>
               <p className="text-[#333333] font-sans text-lg font-bold">
-                Don&apos;t wait—availability for demos is limited. Take the
-                first step toward transforming your hospitality business now!
+                Simply share a few details about your property, and we&apos;ll
+                send you a concise, actionable strategy on how Buildbility can
+                maximize your margins and empower your team.
+              </p>
+              <p className="text-[#333333] font-sans text-lg italic">
+                &quot;Stop settling for &quot;good enough.&quot; See how fast,
+                efficient, and profitable your operation can become&quot;.
               </p>
             </div>
 
@@ -50,9 +105,12 @@ export function CallToAction() {
               <div className="bg-[#faf9f5] rounded-[1.5rem] p-4 md:p-8 w-full max-w-md relative overflow-hidden shadow-[8px_8px_16px_rgba(0,0,0,0.1),-8px_-8px_16px_rgba(255,255,255,0.8)]">
                 <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-gradient pointer-events-none z-[1]" />
                 <h3 className="font-serif text-2xl text-[#333333] mb-6 text-center relative z-[2]">
-                  Schedule Your Demo
+                  Let&apos;s get started
                 </h3>
-                <form className="space-y-4 relative z-[2]">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-4 relative z-[2]"
+                >
                   <div className="space-y-2">
                     <label
                       htmlFor="email"
@@ -63,14 +121,45 @@ export function CallToAction() {
                     <input
                       type="email"
                       id="email"
-                      className="neumorphic-input w-full px-4 py-2 bg-[#FAF9F5] text-[#333333]"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className={`neumorphic-input w-full px-4 py-2 bg-[#FAF9F5] text-[#333333] ${
+                        errors.email ? "border-red-500" : ""
+                      }`}
                       placeholder="john@example.com"
                     />
+                    {errors.email && (
+                      <p className="text-red-500 text-sm">{errors.email}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="website"
+                      className="text-sm font-medium text-[#333333]"
+                    >
+                      Business Website
+                    </label>
+                    <input
+                      type="text"
+                      id="website"
+                      value={website}
+                      onChange={(e) => setWebsite(e.target.value)}
+                      className={`neumorphic-input w-full px-4 py-2 bg-[#FAF9F5] text-[#333333] ${
+                        errors.website ? "border-red-500" : ""
+                      }`}
+                      placeholder="https://www.yourbusinesswebsite.com"
+                    />
+                    {errors.website && (
+                      <p className="text-red-500 text-sm">{errors.website}</p>
+                    )}
                   </div>
 
-                  <Button className=" bg-[#2C3E50] text-white font-sans w-full flex items-center justify-center gap-2 mt-6 rounded-lg">
-                    <Calendar className="h-4 w-4" />
-                    Schedule Demo
+                  <Button
+                    type="submit"
+                    className="bg-[#2C3E50] text-white font-sans w-full flex items-center justify-center gap-2 mt-6 rounded-lg"
+                  >
+                    <Send className="h-4 w-4" />
+                    Send
                   </Button>
                 </form>
               </div>

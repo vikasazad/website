@@ -1,6 +1,7 @@
 import type React from "react";
 import "@/app/globals.css";
 import { Inter, Cinzel, Open_Sans } from "next/font/google";
+import Script from "next/script";
 // import { AnimationWrapper } from "@/components/AnimationWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -33,6 +34,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-5NC1EL3TNP"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5NC1EL3TNP');
+          `}
+        </Script>
+      </head>
       <body
         className={`${inter.className} ${cinzel.variable} ${openSans.variable}`}
       >
