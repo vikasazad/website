@@ -2,11 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { Pointer, Send } from "lucide-react";
 import { useState } from "react";
+import { sendInquiryEmail } from "./mail";
 
 export function CallToAction() {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
   const [errors, setErrors] = useState({ email: "", website: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -22,7 +24,7 @@ export function CallToAction() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors = { email: "", website: "" };
     let isValid = true;
@@ -46,8 +48,26 @@ export function CallToAction() {
     setErrors(newErrors);
 
     if (isValid) {
-      console.log("Email:", email);
-      console.log("Website:", website);
+      try {
+        setIsSubmitting(true);
+        const result = await sendInquiryEmail({ email, website });
+
+        if (result.success) {
+          // Clear form after successful submission
+          setEmail("");
+          setWebsite("");
+          alert("Thank you! We'll be in touch soon.");
+        } else {
+          throw new Error("Failed to send email");
+        }
+      } catch (error) {
+        console.error("Error sending email:", error);
+        alert(
+          "Sorry, there was an error sending your message. Please try again."
+        );
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -157,9 +177,10 @@ export function CallToAction() {
                   <Button
                     type="submit"
                     className="bg-[#2C3E50] text-white font-sans w-full flex items-center justify-center gap-2 mt-6 rounded-lg"
+                    disabled={isSubmitting}
                   >
                     <Send className="h-4 w-4" />
-                    Send
+                    {isSubmitting ? "Sending..." : "Send"}
                   </Button>
                 </form>
               </div>
