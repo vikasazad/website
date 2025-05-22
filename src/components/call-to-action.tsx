@@ -1,8 +1,8 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import mail from "@/lib/mail";
 import { Pointer, Send } from "lucide-react";
 import { useState } from "react";
-import { sendInquiryEmail } from "./mail";
 
 export function CallToAction() {
   const [email, setEmail] = useState("");
@@ -48,25 +48,13 @@ export function CallToAction() {
     setErrors(newErrors);
 
     if (isValid) {
-      try {
-        setIsSubmitting(true);
-        const result = await sendInquiryEmail({ email, website });
-
-        if (result.success) {
-          // Clear form after successful submission
-          setEmail("");
-          setWebsite("");
-          alert("Thank you! We'll be in touch soon.");
-        } else {
-          throw new Error("Failed to send email");
-        }
-      } catch (error) {
-        console.error("Error sending email:", error);
-        alert(
-          "Sorry, there was an error sending your message. Please try again."
-        );
-      } finally {
+      console.log("Email:", email);
+      console.log("Website:", website);
+      setIsSubmitting(true);
+      const result = await mail(email, website);
+      if (result) {
         setIsSubmitting(false);
+        console.log(result);
       }
     }
   };
@@ -176,7 +164,7 @@ export function CallToAction() {
 
                   <Button
                     type="submit"
-                    className="bg-[#2C3E50] text-white font-sans w-full flex items-center justify-center gap-2 mt-6 rounded-lg"
+                    className="bg-[#2C3E50] text-white font-sans w-full flex items-center justify-center gap-2 mt-6 rounded-lg cursor-pointer"
                     disabled={isSubmitting}
                   >
                     <Send className="h-4 w-4" />
