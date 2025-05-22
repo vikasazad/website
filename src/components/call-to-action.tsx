@@ -54,7 +54,7 @@ export function CallToAction() {
       const result = await mail(email, website);
       if (result) {
         setIsSubmitting(false);
-        console.log(result);
+        console.log("jhgfhfjhfhhjgf", result);
       }
     }
   };
