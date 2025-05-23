@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+const resend = new Resend("re_jfYxqxjT_4gBLnAmgTDGxcBtjaPshm8Tr");
 
 export async function POST(req: Request) {
   try {

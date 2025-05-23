@@ -54,6 +54,9 @@ export function CallToAction() {
       setIsSubmitting(true);
       const result = await fetch("/api/send", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ email, website }),
       });
       if (result) {
