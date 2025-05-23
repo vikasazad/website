@@ -1,14 +1,15 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import mail from "@/lib/mail";
 import { Pointer, Send } from "lucide-react";
 import { useState } from "react";
+import { SuccessPopup } from "./success-popup";
 
 export function CallToAction() {
   const [email, setEmail] = useState("");
   const [website, setWebsite] = useState("");
   const [errors, setErrors] = useState({ email: "", website: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -51,10 +52,19 @@ export function CallToAction() {
       console.log("Email:", email);
       console.log("Website:", website);
       setIsSubmitting(true);
-      const result = await mail(email, website);
+      const result = await fetch("/api/send", {
+        method: "POST",
+        body: JSON.stringify({ email, website }),
+      });
       if (result) {
         setIsSubmitting(false);
-        console.log("jhgfhfjhfhhjgf", result);
+        if (result.ok) {
+          setEmail("");
+          setWebsite("");
+          setShowSuccessPopup(true);
+        } else {
+          console.log("Failed to send email");
+        }
       }
     }
   };
@@ -64,6 +74,10 @@ export function CallToAction() {
       id="call-to-action"
       className="w-full py-12 md:py-12 lg:py-12 bg-[#FAF9F5]"
     >
+      <SuccessPopup
+        isOpen={showSuccessPopup}
+        onClose={() => setShowSuccessPopup(false)}
+      />
       <div className="container mx-auto max-w-[1400px] px-4 md:px-6">
         <div className="neumorphic-container p-6 md:p-12 lg:p-16">
           <div className="flex justify-center w-full mb-8">

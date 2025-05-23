@@ -97,7 +97,7 @@ export function Integrations() {
               {/* SVG Lines Pattern */}
               <div className="w-full max-w-[100%] h-[200px] lg:h-[360px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 relative hidden lg:block">
                 <Image
-                  src="/images/lines2.svg"
+                  src="/images/lines.svg"
                   alt="Lines Pattern"
                   fill
                   className="object-contain"

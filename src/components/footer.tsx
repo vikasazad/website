@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -17,12 +17,14 @@ export function Footer() {
             />
           </div>
           <div className="flex space-x-4">
-            {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
-              <Link href="#" key={index} className="neumorphic-icon-button">
-                <Icon className="h-5 w-5 text-[#C1A265]" />
-                <span className="sr-only">Social Media</span>
-              </Link>
-            ))}
+            <Link
+              href="https://www.instagram.com/buildbility/"
+              target="_blank"
+              className="neumorphic-icon-button"
+            >
+              <Instagram className="h-5 w-5 text-[#C1A265]" />
+              <span className="sr-only">Instagram</span>
+            </Link>
           </div>
         </div>
         <div className="mt-6 text-center">

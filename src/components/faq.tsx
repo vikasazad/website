@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { CircleHelp, Mail } from "lucide-react";
+import { ScrollButton } from "./ScrollButton";
 
 export function Faq() {
   const faqs = [
@@ -95,9 +96,9 @@ export function Faq() {
                   info@buildbility.com
                 </a>
               </div>
-              <button className="px-8 py-3 bg-[#C1A265] text-white rounded-lg hover:bg-[#a88a54] transition-colors duration-300 font-sans cursor-pointer">
+              <ScrollButton className="px-8 py-3 bg-[#C1A265] text-white rounded-lg hover:bg-[#a88a54] transition-colors duration-300 font-sans cursor-pointer">
                 Contact Us
-              </button>
+              </ScrollButton>
             </div>
           </ScrollReveal>
         </div>
