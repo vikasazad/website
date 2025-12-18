@@ -84,7 +84,7 @@ export function CallToAction() {
       <div className="container mx-auto max-w-[1400px] px-4 md:px-6">
         <div className="neumorphic-container p-6 md:p-12 lg:p-16">
           <div className="flex justify-center w-full mb-8">
-            <div className="inline-block rounded-full px-0 py-1 neumorphic-badge border-1  border-[#fbe6c7] ">
+            <div className="inline-block rounded-full px-0 py-1 neumorphic-badge border-1  border-[#fbe6c7] [box-shadow:var(--shadow-l)] ">
               <div className="flex items-center gap-2">
                 <Pointer className="h-4 w-4 text-[#C1A265]" />
                 <span className="text-[#C1A265] font-sans text-sm">

@@ -76,6 +76,19 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --bg-dark: hsl(0, 0%, 90%);
+  --bg: hsl(0, 0%, 5%);
+  --bg-light: hsl(0, 0%, 100%);
+  --text: hsl(0, 0%, 5%);
+  --text-muted: hsl(0, 0%, 30%);
+  --gradient: linear-gradient(
+    linear-gradient(0deg, var(--bg), var(--bg-light))
+  );
+  --border-card: solid 1px var(--bg);
+  --shadow-s: inset 1px 2px #ffffff30, 0 1px 2px #00000030, 0 2px 4px #00000015;
+  --shadow-m: inset 1px 2px #ffffff50, 0 2px 4px #00000030, 0 4px 8px #00000015;
+  --shadow-l:
+    inset 1px 2px #ffffff70, 0 4px 6px #00000030, 0 6px 10px #00000015;
 }
 
 .dark {
@@ -141,13 +154,15 @@
 .neumorphic-container {
   background-color: #faf9f5;
   border-radius: 2rem;
-  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    20px 20px 60px rgba(0, 0, 0, 0.1),
     -20px -20px 60px rgba(255, 255, 255, 0.8);
 }
 
 .neumorphic-container-inset {
   border-radius: 2rem;
-  box-shadow: inset 8px 8px 16px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    inset 8px 8px 16px rgba(0, 0, 0, 0.1),
     inset -8px -8px 16px rgba(255, 255, 255, 0.8);
 }
 
@@ -158,13 +173,15 @@
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
-  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    8px 8px 16px rgba(0, 0, 0, 0.1),
     -8px -8px 16px rgba(255, 255, 255, 0.8);
 }
 
 .neumorphic-card:hover {
   transform: translateY(-5px);
-  box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    12px 12px 20px rgba(0, 0, 0, 0.1),
     -12px -12px 20px rgba(255, 255, 255, 0.8);
 }
 
@@ -178,17 +195,20 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
   font-weight: 500;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    5px 5px 10px rgba(0, 0, 0, 0.1),
     -5px -5px 10px rgba(255, 255, 255, 0.8);
 }
 
 .neumorphic-button:hover {
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    3px 3px 6px rgba(0, 0, 0, 0.1),
     -3px -3px 6px rgba(255, 255, 255, 0.8);
 }
 
 .neumorphic-button:active {
-  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    inset 3px 3px 6px rgba(0, 0, 0, 0.1),
     inset -3px -3px 6px rgba(255, 255, 255, 0.8);
 }
 
@@ -203,17 +223,20 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
   font-weight: 500;
-  box-shadow: 5px 5px 10px rgba(44, 62, 80, 0.3),
+  box-shadow:
+    5px 5px 10px rgba(44, 62, 80, 0.3),
     -5px -5px 10px rgba(255, 255, 255, 0.1);
 }
 
 .neumorphic-button-primary:hover {
-  box-shadow: 3px 3px 6px rgba(44, 62, 80, 0.3),
+  box-shadow:
+    3px 3px 6px rgba(44, 62, 80, 0.3),
     -3px -3px 6px rgba(255, 255, 255, 0.1);
 }
 
 .neumorphic-button-primary:active {
-  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.2),
+  box-shadow:
+    inset 3px 3px 6px rgba(0, 0, 0, 0.2),
     inset -3px -3px 6px rgba(255, 255, 255, 0.1);
 }
 
@@ -224,7 +247,8 @@
   padding-right: 1rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    3px 3px 6px rgba(0, 0, 0, 0.1),
     -3px -3px 6px rgba(255, 255, 255, 0.8);
 }
 
@@ -237,7 +261,8 @@
   justify-content: center;
   width: 4rem;
   height: 4rem;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    4px 4px 8px rgba(0, 0, 0, 0.1),
     -4px -4px 8px rgba(255, 255, 255, 0.8);
 }
 
@@ -253,30 +278,35 @@
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    3px 3px 6px rgba(0, 0, 0, 0.1),
     -3px -3px 6px rgba(255, 255, 255, 0.8);
 }
 
 .neumorphic-icon-button:hover {
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.1),
     -2px -2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .neumorphic-icon-button:active {
-  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    inset 2px 2px 4px rgba(0, 0, 0, 0.1),
     inset -2px -2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .neumorphic-image-container {
   border-radius: 1.5rem;
   overflow: hidden;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    10px 10px 20px rgba(0, 0, 0, 0.1),
     -10px -10px 20px rgba(255, 255, 255, 0.8);
 }
 
 .neumorphic-input {
   border-radius: 1rem;
-  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    inset 3px 3px 6px rgba(0, 0, 0, 0.1),
     inset -3px -3px 6px rgba(255, 255, 255, 0.8);
 }
 
@@ -284,7 +314,8 @@
   background-color: #faf9f5;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.1),
     -6px -6px 12px rgba(255, 255, 255, 0.8);
 }
 

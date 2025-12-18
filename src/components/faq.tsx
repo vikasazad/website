@@ -40,7 +40,7 @@ export function Faq() {
         <ScrollReveal>
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <div className="inline-block neumorphic-badge mb-8 border-1 border-[#C1A265]">
+              <div className="inline-block neumorphic-badge mb-8 border-1 border-[#C1A265] [box-shadow:var(--shadow-l)] ">
                 <div className="flex items-center gap-2">
                   <CircleHelp className="h-4 w-4 text-[#C1A265]" />
                   <span className="text-[#C1A265] font-sans text-sm">
@@ -91,12 +91,12 @@ export function Faq() {
                 </div>
                 <a
                   href="mailto:info@buildbility.com"
-                  className="text-[#C1A265] hover:underline"
+                  className="text-[#C1A265] hover:underline "
                 >
                   info@buildbility.com
                 </a>
               </div>
-              <ScrollButton className="px-8 py-3 bg-[#C1A265] text-white rounded-lg hover:bg-[#a88a54] transition-colors duration-300 font-sans cursor-pointer">
+              <ScrollButton className="px-8 py-3 bg-[#C1A265] text-white rounded-lg hover:bg-[#a88a54] transition-colors duration-300 font-sans cursor-pointer [box-shadow:var(--shadow-l)] ">
                 Contact Us
               </ScrollButton>
             </div>

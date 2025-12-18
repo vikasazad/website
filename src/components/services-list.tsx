@@ -122,7 +122,7 @@ export function ServicesList() {
         <ScrollReveal>
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <div className="inline-block mb-4 rounded-full px-4 py-1 neumorphic-badge border-1  border-[#fbe6c7]">
+              <div className="inline-block mb-4 rounded-full px-4 py-1 neumorphic-badge border-1  border-[#fbe6c7] [box-shadow:var(--shadow-l)] ">
                 <div className="flex items-center gap-2">
                   <Cpu className="h-4 w-4 text-[#C1A265]" />
                   <span className="text-[#C1A265] font-sans text-sm">

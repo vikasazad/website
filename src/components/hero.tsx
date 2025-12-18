@@ -21,7 +21,7 @@ export function Hero() {
               automation and personalization.
             </p>
             <div className="flex flex-col  items-center  gap-2">
-              <ScrollButton className="bg-[#2C3E50] text-white font-sans text-lg px-8 py-5 rounded-lg cursor-pointer  ">
+              <ScrollButton className="bg-[#2C3E50] text-white font-sans text-lg px-8 py-5 rounded-lg cursor-pointer [box-shadow:var(--shadow-l)] ">
                 Start for free <MoveUpRight className="h-4 w-4 ml-2 inline" />
               </ScrollButton>
               <p className="text-[#666666] text-sm ">
@@ -38,7 +38,7 @@ export function Hero() {
           >
             {/* Top quarter circle shape */}
 
-            <div className="relative">
+            <div className="relative ">
               <Image
                 src="/images/dashboard.svg"
                 width={1200}

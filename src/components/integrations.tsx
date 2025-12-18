@@ -73,7 +73,7 @@ export function Integrations() {
         <div className="neumorphic-container p-8 md:p-12 lg:p-16 relative">
           <div className="absolute top-0 right-0 w-[120px] h-[120px] md:w-[220px] md:h-[220px]  bg-gradient pointer-events-none z-[1]" />
           <div className="flex justify-center w-full mb-8">
-            <div className="inline-block rounded-full px-4 py-1 neumorphic-badge border-1 border-[#fbe6c7]">
+            <div className="inline-block rounded-full px-4 py-1 neumorphic-badge border-1 border-[#fbe6c7] [box-shadow:var(--shadow-l)] ">
               <div className="flex items-center gap-2">
                 <Layers className="h-4 w-4 text-[#C1A265]" />
                 <span className="text-[#C1A265] font-sans text-sm">
@@ -106,11 +106,11 @@ export function Integrations() {
               </div>
 
               {/* Left side icons */}
-              <div className="absolute left-0 md:left-1/4 lg:left-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 lg:gap-12 w-[120px] items-center md:items-start">
+              <div className="absolute left-0 md:left-1/4 lg:left-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 lg:gap-12 w-[120px] items-center md:items-start ">
                 {leftIcons.map((icon, index) => (
                   <ScrollReveal key={index}>
                     <div
-                      className={`w-full flex ${
+                      className={`w-full flex [box-shadow:var(--shadow-s)] rounded-lg ${
                         index % 2 === 0
                           ? "justify-center md:justify-start"
                           : "md:justify-start lg:justify-end"
@@ -129,7 +129,7 @@ export function Integrations() {
                 {rightIcons.map((icon, index) => (
                   <ScrollReveal key={index}>
                     <div
-                      className={`w-full flex ${
+                      className={`w-full flex [box-shadow:var(--shadow-s)] rounded-lg ${
                         index % 2 === 0
                           ? "justify-center md:justify-start lg:justify-end"
                           : "justify-center md:justify-start"
